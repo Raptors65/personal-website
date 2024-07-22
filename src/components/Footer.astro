@@ -1,0 +1,51 @@
+---
+import clsx from "clsx";
+import GitHubIcon from "./icons/GitHubIcon.astro";
+import InstagramIcon from "./icons/InstagramIcon.astro";
+import LinkedInIcon from "./icons/LinkedInIcon.astro";
+import SEWebringIcon from "./icons/SEWebringIcon.astro";
+import YouTubeIcon from "./icons/YouTubeIcon.astro";
+import { colorSchemes } from "../utils/page-info";
+
+const year = new Date().getFullYear();
+
+const links = [
+  {
+    component: LinkedInIcon,
+    href: "https://www.linkedin.com/in/lucaskim65/",
+  },
+  {
+    component: GitHubIcon,
+    href: "https://github.com/Raptors65",
+  },
+  {
+    component: YouTubeIcon,
+    href: "https://www.youtube.com/@lucas_kim",
+  },
+  {
+    component: InstagramIcon,
+    href: "https://www.instagram.com/lucaskamadakim",
+  },
+  {
+    component: SEWebringIcon,
+    href: "https://se-webring.xyz/",
+  },
+];
+---
+
+<footer class="border-t border-gray-700 mt-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8 pt-2">
+    Copyright &copy; {year} Lucas Kim
+    <div class="flex flex-wrap gap-5 mt-5">
+      {
+        links.map((link) => (
+          <a href={link.href} target="_blank">
+            <link.component
+              className={clsx("w-16 h-16", colorSchemes[Astro.url.pathname])}
+            />
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</footer>

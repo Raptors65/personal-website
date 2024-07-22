@@ -1,0 +1,33 @@
+<style>
+  .greeting {
+    animation:
+      typewriter 0.5s steps(6) 1s 1 normal both,
+      blinkTextCursor 500ms steps(6) 5;
+    overflow: hidden;
+    border-right: 2px solid transparent;
+    font-family: monospace;
+    text-wrap: nowrap;
+  }
+
+  @keyframes typewriter {
+    from {
+      width: 8.3em;
+    }
+
+    to {
+      width: 11.6em;
+    }
+  }
+
+  @keyframes blinkTextCursor {
+    from {
+      border-right-color: white;
+    }
+
+    to {
+      border-right-color: transparent;
+    }
+  }
+</style>
+
+<h1 class="greeting text-2xl sm:text-3xl md:text-5xl">Hi, my name is Lucas.</h1>

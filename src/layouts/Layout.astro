@@ -1,4 +1,9 @@
 ---
+import { ViewTransitions } from "astro:transitions";
+import Navbar from "../components/Navbar";
+import { colorSchemes } from "../utils/page-info";
+import Footer from "../components/Footer.astro";
+
 interface Props {
   title: string;
 }
@@ -7,45 +12,19 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en-CA">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>Lucas Kim - {title}</title>
+    <ViewTransitions />
   </head>
-  <body>
+  <body class={colorSchemes[Astro.url.pathname]}>
+    <Navbar client:load transition:persist pathname={Astro.url.pathname} />
     <slot />
+    <Footer />
   </body>
 </html>
-<style is:global>
-  :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
-  }
-  html {
-    font-family: system-ui, sans-serif;
-    background: #13151a;
-    background-size: 224px;
-  }
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
-  }
-</style>
