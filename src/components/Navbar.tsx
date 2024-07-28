@@ -16,7 +16,7 @@ export default function Navbar({ pathname }: Props) {
   return (
     <Disclosure
       as="nav"
-      className={"text-inherit sticky top-0 backdrop-blur-md"}
+      className={clsx("text-inherit sticky top-0 z-10", colorSchemes[pathname])}
     >
       <div className="mx-auto max-w-7xl px-2 sm:px-8">
         <div className="relative flex h-16 items-center justify-between">
