@@ -1,17 +1,94 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import frcDiscordBot from "../images/frc-discord-bot.png";
+import parodyMaker from "../images/parody-maker.png";
+import pushbuttonToy from "../images/pushbutton-toy.jpg";
+import recipeDeals from "../images/recipe-deals.svg";
 
 const projects = [
   {
-    name: "test",
-    description: "testing",
-    href: "#",
+    name: "parody-maker",
+    description:
+      "A website that helps users create lyrics for parodies of songs.",
+    href: "https://github.com/Raptors65/parody-maker",
+    imageSrc: parodyMaker.src,
+    bgColor: "255, 255, 255",
+    tags: ["Web", "Next.js", "TypeScript"],
+    textColor: "text-black",
+    tagColor: "bg-black",
+  },
+  {
+    name: "pushbutton-toy",
+    description:
+      "Converts an Arduino into a toy that can play Simon Says, Whack-A-Mole, and a piano.",
+    href: "https://github.com/Raptors65/pushbutton-toy",
+    imageSrc: pushbuttonToy.src,
+    bgColor: "145, 63, 41",
+    tags: ["Arduino"],
+    textColor: "text-white",
+    tagColor: "bg-white",
+  },
+  {
+    name: "recipe-deals",
+    description:
+      "A website that finds recipes based on what's on sale at the local grocery store.",
+    href: "https://github.com/Raptors65/recipe-deals",
+    imageSrc: recipeDeals.src,
+    bgColor: "241, 173, 64",
+    tags: ["Web"],
+    textColor: "text-black",
+    tagColor: "bg-black",
+  },
+  {
+    name: "frc-discord-bot",
+    description:
+      "A bot that uses the API from The Blue Alliance to access data about FIRST Robotics Competition events.",
+    href: "https://github.com/Raptors65/frc-discord-bot",
+    imageSrc: frcDiscordBot.src,
+    bgColor: "44, 45, 49",
+    tags: ["Web"],
+    textColor: "text-white",
+    tagColor: "bg-white",
   },
 ];
 ---
 
+<style></style>
+
 <Layout title="Projects">
   <main class="max-w-7xl mx-auto px-4 sm:px-8">
     <h1 class="font-mono text-2xl sm:text-3xl md:text-5xl">Projects</h1>
+    <div class="flex flex-wrap gap-3">
+      {
+        projects.map((project) => (
+          <a
+            class="relative border border-gray-400 w-full sm:w-48 mt-5 transition duration-30 rounded-xl overflow-hidden group"
+            href={project.href}
+            target="_blank"
+          >
+            <div
+              class="absolute w-full h-full -z-10 group-hover:scale-110 transition"
+              style={`background: linear-gradient(to bottom, rgba(${project.bgColor}, 0) 0%, rgba(${project.bgColor}, 0) 30%, rgba(${project.bgColor}, 0.9) 40%), url(${project.imageSrc}); background-size: cover;`}
+            />
+            <div class:list={["mt-24 p-2", project.textColor]}>
+              <h2 class="text-xl font-bold">{project.name}</h2>
+              <p>{project.description}</p>
+              <div class="flex flex-wrap gap-2 mt-2">
+                {project.tags.map((tag) => (
+                  <span
+                    class:list={[
+                      "bg-opacity-20 px-2 rounded-full text-sm",
+                      project.tagColor,
+                    ]}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </div>
   </main>
 </Layout>
