@@ -49,7 +49,7 @@ export default function Navbar({ pathname }: Props) {
                     aria-current={pathname === item.href ? "page" : undefined}
                     className={clsx(
                       pathname === item.href ? "underline" : "hover:underline",
-                      "rounded-md px-3 py-2 text-sm font-medium"
+                      "rounded-md px-3 py-2 text-sm font-medium",
                     )}
                   >
                     {item.name}
@@ -71,7 +71,7 @@ export default function Navbar({ pathname }: Props) {
               aria-current={pathname === item.href ? "page" : undefined}
               className={clsx(
                 pathname === item.href ? "underline" : "hover:underline",
-                "block rounded-md px-3 py-2 text-base font-medium"
+                "block rounded-md px-3 py-2 text-base font-medium",
               )}
             >
               {item.name}
