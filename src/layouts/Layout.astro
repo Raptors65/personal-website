@@ -20,6 +20,15 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Lucas Kim - {title}</title>
+    <style is:global>
+      @font-face {
+        font-family: 'IBM Plex Mono';
+        src: url('/fonts/IBMPlexMono-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
     <ViewTransitions />
   </head>
   <body class={colorSchemes[Astro.url.pathname]}>
