@@ -1,38 +1,60 @@
 ---
 import Timeline from "../../components/Timeline.astro";
 import Layout from "../../layouts/Layout.astro";
+
+import basketball from "../../images/basketball.jpg";
+import robotics from "../../images/robotics.jpg";
+import { Image } from "astro:assets";
 ---
 
 <Layout title="Extracurriculars">
   <main class="max-w-7xl mx-auto px-4 sm:px-8">
     <h1 class="font-mono text-2xl sm:text-3xl md:text-5xl">Extracurriculars</h1>
-    <p class="mt-5">This page is a work in progress!</p>
-    <!-- <section class="flex">
-      <div class="max-w-xl">
+    <section class="grid grid-cols-2 gap-x-10 gap-y-10">
+      <div class="col-span-2 md:col-span-1">
         <h2 class="font-mono text-xl mt-5">Basketball</h2>
-        <p>
-          I attended the
-          <a
-            href="https://sites.google.com/tdsb.on.ca/mgci-tops/home"
-            target="_blank"
-            class="underline">TOPS Program</a
-          >
-          at Marc Garneau Collegiate Institute, a specialized high school program
-          with enrichment in the maths, sciences, and language arts. During my time
-          at MGCI, I was primarily involved in the robotics club (becoming a software
-          lead in grade 12) and basketball teams (winning Most Dedicated Player on
-          the 2021-22 junior boys basketball team).
+        <p class="mt-2">
+          I started playing basketball at age 5 and started playing rep when I
+          was 8 years old. Since then, I've played in countless tournaments and
+          leagues across Canada and the United States. Most recently, I played
+          for V3 Preparatory Academy and my high school's senior team.
         </p>
+        <p class="mt-5">Some of the tournaments I've competed in include:</p>
+        <ul class="list-disc ml-5">
+          <li>All-American Jamboree in Orlando, FL</li>
+          <li>Big Shots Prep Nationals in Rock Hill, SC</li>
+          <li>Hoop Group Pittsburgh Jam Fest</li>
+          <li>Las Vegas Live</li>
+        </ul>
       </div>
+      <Image
+        src={basketball}
+        alt="Me playing basketball"
+        class="col-span-2 md:col-span-1 bg-cover bg-center h-96 object-cover object-center"
+      />
     </section>
-    <section class="flex">
-      <div class="max-w-xl">
+    <section class="grid grid-cols-2 gap-x-10 gap-y-10 mt-5">
+      <div class="col-span-2 md:col-span-1">
         <h2 class="font-mono text-xl mt-5">Robotics</h2>
-        <p>
-          I'm an incoming Software Engineering student at the University of
-          Waterloo. Looking forward to getting started this September!
+        <p class="mt-2">
+          I started doing robotics in grade 5 as a builder and programmer,
+          helping my elementary school team win the Robot Performance Award and
+          the Strategy & Innovation Award at our regional FIRST LEGO League
+          (FLL) tournament. I was also a programmer for my middle school FLL
+          team in grade 8, when we qualified for the provincial championship.
+        </p>
+        <p class="mt-5">
+          In grade 9, I created a 3D model for the FIRST Robotics Competition
+          (FRC) Game Design Challenge, contributing to our team winning the
+          Rookie Design Award. In grades 11-12, I was a programmer and driver
+          for the FRC team, working on the robot code and the team website.
         </p>
       </div>
-    </section> -->
+      <Image
+        src={robotics}
+        alt="Robotics team working on robot"
+        class="col-span-2 md:col-span-1 bg-cover bg-center h-96 object-cover object-center"
+      />
+    </section>
   </main>
 </Layout>
