@@ -1,5 +1,37 @@
 ---
+import NavCard from "../../components/NavCard.astro";
 import Layout from "../../layouts/Layout.astro";
+
+const sections = [
+  {
+    title: "Work Experience",
+    description: "Information about my previous jobs.",
+    hoverStyle: "hover:bg-orange-200 hover:text-black",
+    href: "/experience/work/",
+  },
+  {
+    title: "Extracurriculars",
+    description: "Other activities, like basketball and robotics.",
+    hoverStyle: "hover:bg-red-200 hover:text-black",
+    href: "/experience/extracurriculars/",
+  },
+];
 ---
 
-<Layout title="Experience" />
+<Layout title="Experience">
+  <main class="max-w-7xl mx-auto px-4 sm:px-8">
+    <h1 class="font-mono text-2xl sm:text-3xl md:text-5xl">Experience</h1>
+    <div class="flex gap-5 justify-left flex-wrap mt-5">
+      {
+        sections.map((section) => (
+          <NavCard
+            title={section.title}
+            description={section.description}
+            hoverStyle={section.hoverStyle}
+            href={section.href}
+          />
+        ))
+      }
+    </div>
+  </main>
+</Layout>

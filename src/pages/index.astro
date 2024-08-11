@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 
 import profilePicture from "../images/jasper-picture.jpg";
 import { getImage, Image } from "astro:assets";
+import NavCard from "../components/NavCard.astro";
 
 const sections = [
   {
@@ -62,16 +63,12 @@ const sections = [
         <div class="flex gap-5 justify-center flex-wrap mt-5">
           {
             sections.map((section) => (
-              <a
+              <NavCard
                 href={section.href}
-                class:list={[
-                  "border border-gray-700 p-3 w-72 transition duration-300",
-                  section.hoverStyle,
-                ]}
-              >
-                <h2 class="text-xl font-bold">{section.title}</h2>
-                <p>{section.description}</p>
-              </a>
+                title={section.title}
+                description={section.description}
+                hoverStyle={section.hoverStyle}
+              />
             ))
           }
         </div>
