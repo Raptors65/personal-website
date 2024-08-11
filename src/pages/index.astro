@@ -2,6 +2,9 @@
 import Greeting from "../components/Greeting.astro";
 import Layout from "../layouts/Layout.astro";
 
+import profilePicture from "../images/jasper-picture.jpg";
+import { getImage, Image } from "astro:assets";
+
 const sections = [
   {
     title: "Experience",
@@ -43,32 +46,44 @@ const sections = [
   }
 </style>
 <Layout title="Home">
-  <main class="max-w-7xl mx-auto px-4 sm:px-8">
-    <Greeting />
-    <div class="content mt-5 max-w-3xl">
-      <p class="text-lg">
-        I'm an incoming Software Engineering student at the University of
-        Waterloo. I love all things tech, from working on tutoring websites to
-        coding robots to participating in hackathons. I'm also an avid
-        basketball player, competing in tournaments across Canada and the United
-        States.
-      </p>
-      <div class="flex gap-5 justify-center flex-wrap mt-5">
-        {
-          sections.map((section) => (
-            <a
-              href={section.href}
-              class:list={[
-                "border border-gray-700 p-3 w-72 transition duration-300",
-                section.hoverStyle,
-              ]}
-            >
-              <h2 class="text-xl font-bold">{section.title}</h2>
-              <p>{section.description}</p>
-            </a>
-          ))
-        }
+  <main
+    class="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-8 gap-x-10 gap-y-10"
+  >
+    <div class="col-span-8 lg:col-span-5">
+      <Greeting />
+      <div class="content mt-5 max-w-3xl">
+        <p class="text-lg">
+          I'm an incoming Software Engineering student at the University of
+          Waterloo. I love all things tech, from working on tutoring websites to
+          coding robots to participating in hackathons. I'm also an avid
+          basketball player, competing in tournaments across Canada and the
+          United States.
+        </p>
+        <div class="flex gap-5 justify-center flex-wrap mt-5">
+          {
+            sections.map((section) => (
+              <a
+                href={section.href}
+                class:list={[
+                  "border border-gray-700 p-3 w-72 transition duration-300",
+                  section.hoverStyle,
+                ]}
+              >
+                <h2 class="text-xl font-bold">{section.title}</h2>
+                <p>{section.description}</p>
+              </a>
+            ))
+          }
+        </div>
       </div>
     </div>
+    <Image
+      alt="Profile picture"
+      class="content image col-span-8 lg:col-span-3 bg-cover bg-center h-96 lg:h-full object-cover object-center"
+      src={profilePicture}
+      format="webp"
+      widths={[398, 473, 607, 703, 959]}
+      sizes="(max-width: 430px) 398px, (max-width: 639px) 607px, (max-width: 767px) 703px, (max-width: 1023px) 959px, 473px"
+    />
   </main>
 </Layout>
