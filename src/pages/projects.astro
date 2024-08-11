@@ -9,90 +9,99 @@ import parodyMaker from "../images/parody-maker.png";
 import pushbuttonToy from "../images/pushbutton-toy.jpg";
 import recipeDeals from "../images/recipe-deals.svg";
 import societyWebsite from "../images/society-website.png";
+import { Image } from "astro:assets";
 
 const projects = [
   {
-    name: "parody-maker",
+    name: "Parody Maker",
     description:
       "A website that helps users create lyrics for parodies of songs.",
     href: "https://github.com/Raptors65/parody-maker",
-    imageSrc: parodyMaker.src,
+    imageSrc: parodyMaker,
+    imageAlt: "Home page of the parody-maker website",
     bgColor: "255, 255, 255",
     tags: ["Web", "Next.js", "TypeScript"],
     textColor: "text-black",
     tagColor: "bg-black",
   },
   {
-    name: "pushbutton-toy",
+    name: "Arduino Toy",
     description:
       "Converts an Arduino into a toy that can play Simon Says, Whack-A-Mole, and a piano.",
     href: "https://github.com/Raptors65/pushbutton-toy",
-    imageSrc: pushbuttonToy.src,
+    imageSrc: pushbuttonToy,
+    imageAlt: "Arduino circuit with buttons and LEDs",
     bgColor: "145, 63, 41",
     tags: ["Arduino", "C++", "Hardware"],
     textColor: "text-white",
     tagColor: "bg-white",
   },
   {
-    name: "recipe-deals",
+    name: "Recipe Deals",
     description:
       "A website that finds recipes based on what's on sale at the local grocery store.",
     href: "https://github.com/Raptors65/recipe-deals",
-    imageSrc: recipeDeals.src,
+    imageSrc: recipeDeals,
+    imageAlt: "Recipe Deals logo",
     bgColor: "241, 173, 64",
     tags: ["Web", "Web Scraping"],
     textColor: "text-black",
     tagColor: "bg-black",
   },
   {
-    name: "frc-discord-bot",
+    name: "FRC Discord Bot",
     description:
       "A bot that uses the API from The Blue Alliance to access data about FIRST Robotics Competition events.",
     href: "https://github.com/Raptors65/frc-discord-bot",
-    imageSrc: frcDiscordBot.src,
+    imageSrc: frcDiscordBot,
+    imageAlt: "Discord message listing previous FRC matches",
     bgColor: "44, 45, 49",
     tags: ["Discord", "Robotics", "API"],
     textColor: "text-white",
     tagColor: "bg-white",
   },
   {
-    name: "family-of-functions",
+    name: "Magical Functions",
     description:
       "A grade 11 math project: a mathematical twist on Harry Potter.",
     href: "https://github.com/Raptors65/family-of-functions",
-    imageSrc: familyOfFunctions.src,
+    imageSrc: familyOfFunctions,
+    imageAlt: "First page of Magical Functions",
     bgColor: "18, 27, 42",
     tags: ["Web", "Math"],
     textColor: "text-white",
     tagColor: "bg-white",
   },
   {
-    name: "society-website",
+    name: "Implications of AI",
     description:
       "An informational website about the implications of AI for a grade 12 computer science project.",
     href: "https://github.com/Raptors65/society-website",
-    imageSrc: societyWebsite.src,
+    imageSrc: societyWebsite,
+    imageAlt: "Home page of society website",
     bgColor: "0, 70, 184",
     tags: ["Web", "Computer Science", "AI"],
     textColor: "text-white",
     tagColor: "bg-white",
   },
   {
-    name: "counting-project",
+    name: "Forever Forgotten and Lost",
     description:
       "A website that walks through a fictional story involving various math problems (for a grade 12 data management project).",
     href: "https://github.com/Raptors65/counting-project",
-    imageSrc: countingProject.src,
+    imageSrc: countingProject,
+    imageAlt: 'Minecraft screenshot with text saying "Where am I?"',
     bgColor: "45, 29, 13",
     tags: ["Web", "Math", "Minecraft"],
     textColor: "text-white",
     tagColor: "bg-white",
   },
   {
-    name: "arduino-leds-song",
+    name: "LEDs Sync",
     description: "A few LEDs synced to Can't Feel My Face by The Weeknd.",
     href: "https://github.com/Raptors65/arduino-leds-song",
-    imageSrc: arduinoLedsSong.src,
+    imageSrc: arduinoLedsSong,
+    imageAlt: "Arduino circuit with LEDs lit up",
     bgColor: "58, 88, 160",
     tags: ["Arduino", "C++", "Hardware", "Music"],
     textColor: "text-white",
@@ -103,7 +112,8 @@ const projects = [
     description:
       "A mobile game that promotes good sleeping habits. Won 1st place at RecessHacks 3.0.",
     href: "https://github.com/Raptors65/dreamland-buddies",
-    imageSrc: dreamlandBuddies.src,
+    imageSrc: dreamlandBuddies,
+    imageAlt: "Screen from Dreamland Buddies app",
     bgColor: "0, 0, 0",
     tags: ["Mobile", "React Native", "TypeScript", "Game"],
     textColor: "text-white",
@@ -124,13 +134,18 @@ const projects = [
             class="relative border border-gray-400 transition duration-30 rounded-xl overflow-hidden group"
             href={project.href}
             target="_blank"
-            style={`background-color: rgb(${project.bgColor})`}
           >
-            <div
-              class="absolute w-full h-60 group-hover:scale-110 transition bg-center bg-cover"
-              style={`background-image: linear-gradient(to bottom, rgba(${project.bgColor}, 0) 0%, rgba(${project.bgColor}, 0) 90%, rgba(${project.bgColor}, 1) 100%), url(${project.imageSrc});`}
+            <Image
+              alt={project.imageAlt}
+              class="absolute w-full h-60 group-hover:scale-110 transition object-center object-cover -z-10"
+              sizes="(max-width: 543px) 509px, (max-width: 837px) 379px, (max-width: 1099px) 335px, 293px"
+              widths={[293, 335, 379, 509]}
+              src={project.imageSrc}
             />
-            <div class:list={["mt-60 p-2 relative", project.textColor]}>
+            <div
+              class:list={["mt-52 p-2 pt-6 h-full", project.textColor]}
+              style={`background-image: linear-gradient(to bottom, rgba(${project.bgColor}, 0) 0%, rgba(${project.bgColor}, 1) 1rem);`}
+            >
               <h2 class="text-xl font-bold">{project.name}</h2>
               <p>{project.description}</p>
               <div class="flex flex-wrap gap-2 mt-2">
