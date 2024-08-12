@@ -10,9 +10,9 @@ import { Image } from "astro:assets";
 <Layout title="Extracurriculars">
   <main class="max-w-7xl mx-auto px-4 sm:px-8">
     <h1 class="font-mono text-2xl sm:text-3xl md:text-5xl">Extracurriculars</h1>
-    <section class="grid grid-cols-2 gap-x-10 gap-y-10">
+    <section class="grid grid-cols-2 gap-x-10 gap-y-5 mt-5">
       <div class="col-span-2 md:col-span-1">
-        <h2 class="font-mono text-xl mt-5">Basketball</h2>
+        <h2 class="font-mono text-xl">Basketball</h2>
         <p class="mt-2">
           I started playing basketball at age 5 and started playing rep when I
           was 8 years old. Since then, I've played in countless tournaments and
@@ -33,9 +33,9 @@ import { Image } from "astro:assets";
         class="col-span-2 md:col-span-1 bg-cover bg-center h-96 object-cover object-center"
       />
     </section>
-    <section class="grid grid-cols-2 gap-x-10 gap-y-10 mt-5">
+    <section class="grid grid-cols-2 gap-x-10 gap-y-5 mt-7">
       <div class="col-span-2 md:col-span-1">
-        <h2 class="font-mono text-xl mt-5">Robotics</h2>
+        <h2 class="font-mono text-xl">Robotics</h2>
         <p class="mt-2">
           I started doing robotics in grade 5 as a builder and programmer,
           helping my elementary school team win the Robot Performance Award and
@@ -54,6 +54,8 @@ import { Image } from "astro:assets";
         src={robotics}
         alt="Robotics team working on robot"
         class="col-span-2 md:col-span-1 bg-cover bg-center h-96 object-cover object-center"
+        sizes="(max-width: 639px) 607px, (max-width: 767px) 703px, (max-width: 1023px) 460px, 588px"
+        widths={[460, 588, 607, 703]}
       />
     </section>
   </main>
