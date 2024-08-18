@@ -36,8 +36,6 @@ const links = [
     description: "SE Webring",
   },
 ];
-
-const { pathname } = Astro.props;
 ---
 
 <footer class="border-t border-gray-700 mt-10">
@@ -47,9 +45,7 @@ const { pathname } = Astro.props;
       {
         links.map((link) => (
           <a href={link.href} target="_blank" aria-label={link.description}>
-            <link.component
-              className={clsx("w-8 h-8", colorSchemes[pathname])}
-            />
+            <link.component className="w-8 h-8" />
           </a>
         ))
       }
