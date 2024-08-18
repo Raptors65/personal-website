@@ -15,9 +15,9 @@ export const navigation = [
 
 export const colorSchemes: { [id: string]: string } = {
   "/": "bg-black text-white",
-  "/experience/": "bg-blue-950 text-white",
-  "/experience/work/": "bg-orange-200 text-black",
-  "/experience/extracurriculars/": "bg-red-200 text-black",
+  "/experience/": "bg-blue-200 text-black",
+  "/experience/work/": "bg-purple-950 text-white",
+  "/experience/extracurriculars/": "bg-green-950 text-white",
   "/education/": "bg-purple-200 text-black",
   "/projects/": "bg-green-200 text-black",
 };

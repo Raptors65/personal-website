@@ -15,14 +15,14 @@ const { experiences } = Astro.props;
 
 <div class="relative mt-5 ml-3 max-w-3xl">
   <div
-    class="before:content-[''] before:absolute before:w-1 before:h-full before:bg-black"
+    class="before:content-[''] before:absolute before:w-1 before:h-full before:bg-white"
   >
     {
       experiences.map((experience) => (
         <div class="relative mb-5">
-          <div class="w-7 h-7 bg-black rounded-full absolute -left-3" />
+          <div class="w-7 h-7 bg-white rounded-full absolute -left-3" />
           <div class="text-lg ml-7">{experience.timelineDate}</div>
-          <div class="bg-black bg-opacity-5 ml-7 mt-2 p-3">
+          <div class="bg-white bg-opacity-5 ml-7 mt-2 p-3">
             <h2 class="text-lg sm:text-xl font-bold">
               {experience.title} - {experience.company}
             </h2>
