@@ -36,6 +36,15 @@ const { title, description } = Astro.props;
         font-display: swap;
       }
     </style>
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Lucas Kim",
+        "alternateName": "Lucas Kamada Kim",
+        "url": "https://lucaskamadakim.com/"
+      }
+    </script>
     <ViewTransitions fallback="none" />
   </head>
   <body class={colorSchemes[Astro.url.pathname]}>
