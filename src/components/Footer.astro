@@ -13,22 +13,27 @@ const links = [
   {
     component: LinkedInIcon,
     href: "https://www.linkedin.com/in/lucaskim65/",
+    description: "LinkedIn",
   },
   {
     component: GitHubIcon,
     href: "https://github.com/Raptors65",
+    description: "GitHub",
   },
   {
     component: YouTubeIcon,
     href: "https://www.youtube.com/@lucas_kim",
+    description: "YouTube",
   },
   {
     component: InstagramIcon,
     href: "https://www.instagram.com/lucaskamadakim",
+    description: "Instagram",
   },
   {
     component: SEWebringIcon,
     href: "https://se-webring.xyz/",
+    description: "SE Webring",
   },
 ];
 
@@ -41,7 +46,7 @@ const { pathname } = Astro.props;
     <div class="flex flex-wrap gap-5 mt-3">
       {
         links.map((link) => (
-          <a href={link.href} target="_blank">
+          <a href={link.href} target="_blank" aria-label={link.description}>
             <link.component
               className={clsx("w-8 h-8", colorSchemes[pathname])}
             />
