@@ -52,7 +52,7 @@ const { pathname } = Astro.url;
   </head>
   <body transition:animate={fade({ duration: '0.3s' })}>
     <div class:list={[colorSchemes[Astro.url.pathname], "min-h-screen"]}>
-      <Navbar pathname={Astro.url.pathname} />
+      <Navbar client:load pathname={Astro.url.pathname} />
       <slot />
       <Footer />
     </div>
