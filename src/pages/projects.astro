@@ -140,13 +140,16 @@ const projects = [
           >
             <Image
               alt={project.imageAlt}
-              class="absolute w-full h-60 group-hover:scale-110 transition object-center object-cover -z-10"
+              class="absolute w-full h-60 group-hover:scale-110 transition object-center object-cover"
               sizes="(max-width: 543px) 509px, (max-width: 837px) 379px, (max-width: 1099px) 335px, 293px"
               widths={[293, 335, 379, 509]}
               src={project.imageSrc}
             />
             <div
-              class:list={["mt-52 p-2 pt-6 h-full", project.textColor]}
+              class:list={[
+                "mt-52 p-2 pt-6 h-full z-10 relative",
+                project.textColor,
+              ]}
               style={`background-image: linear-gradient(to bottom, rgba(${project.bgColor}, 0) 0%, rgba(${project.bgColor}, 1) 1rem);`}
             >
               <h2 class="text-xl font-bold">{project.name}</h2>

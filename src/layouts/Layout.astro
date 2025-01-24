@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter, fade } from "astro:transitions";
 import Navbar from "../components/Navbar";
 import { colorSchemes } from "../utils/page-info";
 import Footer from "../components/Footer.astro";
@@ -48,11 +48,13 @@ const { pathname } = Astro.url;
         }
       </script>
     }
-    <ViewTransitions fallback="none" />
+    <ClientRouter  />
   </head>
-  <body class={colorSchemes[Astro.url.pathname]}>
-    <Navbar client:load pathname={Astro.url.pathname} />
-    <slot />
-    <Footer />
+  <body transition:animate={fade({ duration: '0.3s' })}>
+    <div class:list={[colorSchemes[Astro.url.pathname], "min-h-screen"]}>
+      <Navbar pathname={Astro.url.pathname} />
+      <slot />
+      <Footer />
+    </div>
   </body>
 </html>
