@@ -4,53 +4,61 @@ import Layout from "../../layouts/Layout.astro";
 
 const experiences = [
   {
+    title: "Engineering Intern",
+    company: "Shopify",
+    period: "May 2025 - Aug. 2025",
+    type: "Full-time internship",
+    points: ["Incoming Summer 2025"],
+    skills: [],
+  },
+  {
     title: "Innovation Developer",
     company: "Royal Bank of Canada",
     period: "July 2024 - Aug. 2024",
-    timelineDate: "July 2024",
     type: "Full-time internship",
     points: [
-      "Worked with an Agile team of 4 high school students to build and deploy a mortgage calculator using Angular, Spring Boot, Jenkins, and OpenShift 4 to make it easier for over 180,000 clients to renew their mortgages",
-      "Demonstrated the project to various stakeholders, earning recognition for technical execution and presentation",
+      "Worked with an Agile team to build and deploy a mortgage calculator using Angular, Spring Boot, and Docker to help 180,000+ clients renew their mortgages",
+      "Demonstrated and pitched the project to 100+ stakeholders",
     ],
-  },
-  {
-    title: "Quality Assurance Analyst",
-    company: "GoalLine Solutions",
-    period: "June 2023 - Aug. 2023",
-    timelineDate: "June 2023",
-    type: "Part-time internship",
-    points: [
-      "Tested functionality, user interface, and calculations to ensure they followed specifications",
-      "Created over 200 detailed bug tickets on Azure DevOps with screenshots and steps to reproduce",
-    ],
+    skills: ["Angular", "TypeScript", "Spring Boot", "Java", "Docker"],
   },
   {
     title: "Tootor Chief Website Manager",
     company: "NewArts Toronto",
     period: "May 2023 - Sept. 2023",
-    timelineDate: "May 2023",
     type: "Part-time job",
     points: [
-      "Managed a tutoring service with 60+ tutors and around 500 tutoring sessions per month",
+      "Managed a tutoring service with 60+ tutors and 500+ tutoring sessions per month",
       "Implemented streaming, voice support, interactive activities, and function calling into a GPT-3.5 AI tutor",
       "Led weekly team meetings to discuss changes and potential new features for the website",
       "Adjusted colour contrast and metadata to comply with Web Content Accessibility Guidelines (WCAG)",
       "Wrote and published daily social media posts on Instagram, X, and Threads in the 3 weeks leading up to the 2023-24 school year",
-      "Conducted a media launch; found media contacts and emailed them a press release",
     ],
+    skills: ["JavaScript", "OpenAI API"],
+  },
+  {
+    title: "Quality Assurance Analyst",
+    company: "GoalLine Solutions",
+    period: "June 2023 - Aug. 2023",
+    type: "Part-time internship",
+    points: [
+      "Tested functionality, user interface, and calculations to ensure they followed specifications",
+      "Created 200+ bug tickets on Azure DevOps with screenshots and steps to reproduce",
+    ],
+    skills: ["Testing"],
   },
   {
     title: "Software Engineer Intern",
     company: "North P&D",
     period: "Feb. 2023 - June 2023",
     timelineDate: "February 2023",
-    type: "Co-op",
+    type: "Part-time internship",
     points: [
-      "Helped implement a website design for a client using Webflow",
+      "Helped implement a website for a client using Webflow",
       "Added new clients to the company website",
-      "Submitted 12 pull requests implementing various features on the company's website, including English-French translation using react-i18next and improved loading speed",
+      "Submitted 10+ pull requests implementing various features on the company's website, including English-French translation using react-i18next and improved loading speed",
     ],
+    skills: ["JavaScript", "React", "Webflow"],
   },
 ];
 ---
@@ -59,8 +67,10 @@ const experiences = [
   title="Work Experience"
   description="Information about my experience from my various jobs."
 >
-  <main class="max-w-7xl mx-auto px-4 sm:px-8 pt-5">
-    <h1 class="font-mono text-2xl sm:text-3xl md:text-5xl">Work Experience</h1>
+  <main class="max-w-7xl mx-auto px-4 sm:px-8 pt-5 flex items-center flex-col">
+    <h1 class="font-mono text-2xl sm:text-3xl md:text-5xl text-center">
+      Work Experience
+    </h1>
     <Timeline experiences={experiences} />
   </main>
 </Layout>

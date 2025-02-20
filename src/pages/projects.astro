@@ -1,17 +1,98 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import arduinoLedsSong from "../images/arduino-leds-song.png";
+import beFit from "../images/be-fit.png";
 import countingProject from "../images/counting-project.png";
+import courseVisualizer from "../images/course-visualizer.png";
+import debugDebacle from "../images/debug-debacle.png";
 import dreamlandBuddies from "../images/dreamland-buddies.png";
 import familyOfFunctions from "../images/family-of-functions.png";
 import frcDiscordBot from "../images/frc-discord-bot.png";
 import parodyMaker from "../images/parody-maker.png";
+import personalWebsite from "../images/personal-website.png";
 import pushbuttonToy from "../images/pushbutton-toy.jpg";
 import recipeDeals from "../images/recipe-deals.png";
+import resumeReviewer from "../images/resume-reviewer.png";
+import shadefindr from "../images/shadefindr.png";
 import societyWebsite from "../images/society-website.png";
+import theBiggerPicture from "../images/the-bigger-picture.png";
+import teamForge from "../images/teamforge.png";
+import torontoCovidApi from "../images/toronto-covid-api.png";
+import trackback from "../images/trackback.png";
 import { Image } from "astro:assets";
 
 const projects = [
+  {
+    name: "Debug Debacle",
+    description:
+      "A multiplayer game where players race to fix AI-generated buggy code. Won 3rd overall at McHacks 12.",
+    href: "https://github.com/honzikschenk/debug-debacle",
+    imageSrc: debugDebacle,
+    imageAlt: "Game in progress for Debug Debacle",
+    bgColor: "17, 22, 41",
+    tags: ["Socket.IO", "React", "Flask"],
+    textColor: "text-white",
+    tagColor: "bg-white",
+  },
+  {
+    name: "BeFit",
+    description:
+      "A website that assesses your form in real-time compared to a YouTube video.",
+    href: "https://github.com/Raptors65/be-fit",
+    imageSrc: beFit,
+    imageAlt: "Workout in progress for BeFit",
+    bgColor: "255, 255, 255",
+    tags: ["MediaPipe", "OpenCV", "React"],
+    textColor: "text-black",
+    tagColor: "bg-black",
+  },
+  {
+    name: "Resume Reviewer",
+    description: "Create and customize your resume with the help of AI!",
+    href: "https://github.com/AlanBui1/Resume-Reviewer",
+    imageSrc: resumeReviewer,
+    imageAlt: "A resume being reviewed using Resume Reviewer",
+    bgColor: "255, 255, 255",
+    tags: ["Docker", "React"],
+    textColor: "text-black",
+    tagColor: "bg-black",
+  },
+  {
+    name: "Course Visualizer",
+    description:
+      "View all the courses at the University of Waterloo as a 3D force-directed graph.",
+    href: "https://github.com/Raptors65/course-visualizer",
+    imageSrc: courseVisualizer,
+    imageAlt: "Initial graph for the course visualizer",
+    bgColor: "0, 1, 16",
+    tags: ["Three.js", "Next.js"],
+    textColor: "text-white",
+    tagColor: "bg-white",
+  },
+  {
+    name: "ShadeFindr",
+    description:
+      "Find the path of minimum sunlight. Won 1st place overall at CTRL+HACK+DEL.",
+    href: "https://github.com/Evang264/ctrl-hack-del-2024",
+    imageSrc: shadefindr,
+    imageAlt: "A shady path found using ShadeFindr",
+    bgColor: "26, 38, 54",
+    tags: ["Google Maps API", "Next.js", "Flask"],
+    textColor: "text-white",
+    tagColor: "bg-white",
+  },
+  {
+    name: "TrackBack",
+    description:
+      "A chatbot that helps you find your lost items using computer vision.",
+    href: "https://github.com/fiona-cai/TrackBack",
+    imageSrc: trackback,
+    imageAlt: "The search bar",
+    bgColor: "255, 255, 255",
+    tags: ["React", "Flask", "OpenCV", "AWS"],
+    textColor: "text-black",
+    tagColor: "bg-black",
+  },
   {
     name: "Parody Maker",
     description:
@@ -33,6 +114,18 @@ const projects = [
     imageAlt: "Arduino circuit with buttons and LEDs",
     bgColor: "145, 63, 41",
     tags: ["Arduino", "C++", "Hardware"],
+    textColor: "text-white",
+    tagColor: "bg-white",
+  },
+  {
+    name: "TeamForge",
+    description:
+      "A chatbot that helps you build a VALORANT esports team roster using vlr.gg data. Top 25 finalist in the VCT Esports Manager Challenge.",
+    href: "https://github.com/Raptors65/vct-esports-manager",
+    imageSrc: teamForge,
+    imageAlt: "The initial screen of TeamForge",
+    bgColor: "0, 0, 0",
+    tags: ["AWS", "LLMs", "Data"],
     textColor: "text-white",
     tagColor: "bg-white",
   },
@@ -61,6 +154,17 @@ const projects = [
     tagColor: "bg-white",
   },
   {
+    name: "The Bigger Picture",
+    description: "Create and share mosaics with live collaboration.",
+    href: "https://github.com/Raptors65/the-bigger-picture",
+    imageSrc: theBiggerPicture,
+    imageAlt: "A mosaic being edited in The Bigger Picture",
+    bgColor: "15, 15, 15",
+    tags: ["Vue", "MySQL", "AWS"],
+    textColor: "text-white",
+    tagColor: "bg-white",
+  },
+  {
     name: "Magical Functions",
     description:
       "A grade 11 math project: a mathematical twist on Harry Potter.",
@@ -73,6 +177,18 @@ const projects = [
     tagColor: "bg-white",
   },
   {
+    name: "Toronto COVID-19 API",
+    description:
+      "An API that retrieves daily COVID-19 data from the City of Toronto website.",
+    href: "https://github.com/Raptors65/toronto-covid-api/",
+    imageSrc: torontoCovidApi,
+    imageAlt: "Toronto COVID-19 API documentation",
+    bgColor: "14, 17, 22",
+    tags: ["Bottle", "Python"],
+    textColor: "text-white",
+    tagColor: "bg-white",
+  },
+  {
     name: "Implications of AI",
     description:
       "An informational website about the implications of AI for a grade 12 computer science project.",
@@ -80,7 +196,7 @@ const projects = [
     imageSrc: societyWebsite,
     imageAlt: "Home page of society website",
     bgColor: "0, 70, 184",
-    tags: ["Web", "Computer Science", "AI"],
+    tags: ["Web"],
     textColor: "text-white",
     tagColor: "bg-white",
   },
@@ -92,7 +208,7 @@ const projects = [
     imageSrc: countingProject,
     imageAlt: 'Minecraft screenshot with text saying "Where am I?"',
     bgColor: "45, 29, 13",
-    tags: ["Web", "Math", "Minecraft"],
+    tags: ["Next.js"],
     textColor: "text-white",
     tagColor: "bg-white",
   },
@@ -103,7 +219,7 @@ const projects = [
     imageSrc: arduinoLedsSong,
     imageAlt: "Arduino circuit with LEDs lit up",
     bgColor: "58, 88, 160",
-    tags: ["Arduino", "C++", "Hardware", "Music"],
+    tags: ["Arduino", "C++"],
     textColor: "text-white",
     tagColor: "bg-white",
   },
@@ -115,26 +231,62 @@ const projects = [
     imageSrc: dreamlandBuddies,
     imageAlt: "Screen from Dreamland Buddies app",
     bgColor: "0, 0, 0",
-    tags: ["Mobile", "React Native", "TypeScript", "Game"],
+    tags: ["React Native", "TypeScript", "Android"],
+    textColor: "text-white",
+    tagColor: "bg-white",
+  },
+  {
+    name: "Personal Website",
+    description: "This website, built using Astro.",
+    href: "https://github.com/Raptors65/personal-website",
+    imageSrc: personalWebsite,
+    imageAlt: "Home screen",
+    bgColor: "0, 0, 0",
+    tags: ["Astro", "React"],
     textColor: "text-white",
     tagColor: "bg-white",
   },
 ];
 ---
 
+<style>
+  .content {
+    animation: 0.25s linear 0.25s fadeIn;
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeIn {
+    from {
+      transform: translateY(1rem);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+</style>
 <Layout
   title="Projects"
   description="Collection of various projects that I've done for school, for hackathons, or for fun."
 >
   <main class="max-w-7xl mx-auto px-4 sm:px-8 overflow-hidden pt-5">
-    <h1 class="font-mono text-2xl sm:text-3xl md:text-5xl">Projects</h1>
+    <h1 class="font-mono text-2xl sm:text-3xl md:text-5xl text-center">
+      Projects
+    </h1>
+    <p class="text-lg mt-5 text-center">
+      These include everything from hackathon projects to school assignments to
+      mini-projects built for fun!
+    </p>
     <div
-      class="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-3 mt-5"
+      class="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-3 mt-5 content relative"
     >
       {
         projects.map((project) => (
           <a
-            class="relative border border-gray-400 transition duration-30 rounded-xl overflow-hidden group"
+            class="relative border border-gray-300 transition duration-30 overflow-hidden group"
             href={project.href}
             target="_blank"
           >
@@ -146,7 +298,10 @@ const projects = [
               src={project.imageSrc}
             />
             <div
-              class:list={["mt-52 p-2 pt-6 h-full relative", project.textColor]}
+              class:list={[
+                "mt-52 py-2 px-5 pb-5 pt-6 h-full relative",
+                project.textColor,
+              ]}
               style={`background-image: linear-gradient(to bottom, rgba(${project.bgColor}, 0) 0%, rgba(${project.bgColor}, 1) 1rem);`}
             >
               <h2 class="text-xl font-bold">{project.name}</h2>
@@ -155,7 +310,7 @@ const projects = [
                 {project.tags.map((tag) => (
                   <span
                     class:list={[
-                      "bg-opacity-20 px-2 rounded-full text-sm",
+                      "bg-opacity-10 px-3 py-1 rounded-full text-sm",
                       project.tagColor,
                     ]}
                   >

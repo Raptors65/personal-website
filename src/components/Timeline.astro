@@ -1,42 +1,74 @@
 ---
+import { CalendarDateRangeIcon } from "@heroicons/react/16/solid";
+import { BriefcaseIcon, CalendarIcon } from "@heroicons/react/24/outline";
+import { fade } from "astro:transitions";
+
 interface Props {
   experiences: {
     title: string;
     company: string;
     period: string;
-    timelineDate: string;
     type: string;
     points: string[];
+    skills: string[];
   }[];
 }
 
 const { experiences } = Astro.props;
 ---
 
-<div class="relative mt-5 ml-3 max-w-3xl">
-  <div
-    class="before:content-[''] before:absolute before:w-1 before:h-full before:bg-white"
-  >
-    {
-      experiences.map((experience) => (
-        <div class="relative mb-5">
-          <div class="w-7 h-7 bg-white rounded-full absolute -left-3" />
-          <div class="text-lg ml-7">{experience.timelineDate}</div>
-          <div class="bg-white bg-opacity-5 ml-7 mt-2 p-3">
-            <h2 class="text-lg sm:text-xl font-bold">
-              {experience.title} - {experience.company}
-            </h2>
-            <div class="text-base sm:text-lg">
-              {experience.period} &bullet; {experience.type}
-            </div>
-            <ul class="list-disc list-outside ml-5">
-              {experience.points.map((point) => (
-                <li class="list-item">{point}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      ))
+<style>
+  .content {
+    animation: 0.25s linear 0.25s fadeIn;
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeIn {
+    from {
+      transform: translateY(1rem);
+      opacity: 0;
     }
-  </div>
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+</style>
+<div class="relative mt-5 sm:mt-10 ml-[2.375rem] mr-2 max-w-3xl content">
+  {
+    experiences.map((experience, i) => (
+      <div class="relative pb-10 trans fade">
+        <BriefcaseIcon className="w-7 h-7 bg-black text-white p-1.5 rounded-full absolute -left-10 z-10" />
+        {i !== experiences.length - 1 && (
+          <div class="w-1 h-full bg-black absolute -left-7" />
+        )}
+        <div>
+          <div class="flex justify-between">
+            <h2 class="text-lg sm:text-xl font-bold">{experience.title}</h2>
+            <div class="items-center gap-x-2 opacity-75 hidden text-lg sm:flex">
+              {experience.period}
+            </div>
+          </div>
+          <div class="text-base sm:text-lg">{experience.company}</div>
+          <div class="text-base sm:text-lg sm:hidden opacity-75">
+            {experience.period}
+          </div>
+          <ul class="list-disc list-outside ml-5">
+            {experience.points.map((point) => (
+              <li class="list-item">{point}</li>
+            ))}
+          </ul>
+          <ul class="flex flex-wrap gap-x-2 gap-y-1 mt-2">
+            {experience.skills.map((skill) => (
+              <li class="bg-black bg-opacity-10 rounded-full px-3 py-1 text-sm">
+                {skill}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    ))
+  }
 </div>

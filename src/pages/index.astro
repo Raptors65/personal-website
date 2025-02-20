@@ -9,22 +9,23 @@ import NavCard from "../components/NavCard.astro";
 const sections = [
   {
     title: "Experience",
-    description: "My work experience, extracurriculars, and volunteering.",
+    description: "My work experience, including internships at Shopify and RBC",
     hoverStyle: "hover:bg-blue-200 hover:text-black",
-    href: "/experience/",
-  },
-  {
-    title: "Education",
-    description: "What I've done at school, from grade 9 to university.",
-    hoverStyle: "hover:bg-purple-200 hover:text-black",
-    href: "/education/",
+    href: "/experience/work/",
   },
   {
     title: "Projects",
     description:
-      "The various projects I've worked on during hackathons and my free time.",
+      "The projects I've worked on during hackathons and my free time",
     hoverStyle: "hover:bg-green-200 hover:text-black",
     href: "/projects/",
+  },
+  {
+    title: "Extracurriculars",
+    description:
+      "Things I've done in my free time, like basketball and robotics",
+    hoverStyle: "hover:bg-purple-200 hover:text-black",
+    href: "/experience/extracurriculars/",
   },
 ];
 ---
@@ -58,9 +59,12 @@ const sections = [
       <div class="content mt-5">
         <p class="text-lg">
           I'm a Software Engineering student at the University of Waterloo. I
-          love all things tech, spending my free time coding robots and
-          participating in hackathons. I'm also an avid basketball player,
-          having competed in tournaments across Canada and the United States.
+          love all things tech, spending my free time building things and
+          participating in hackathons.
+        </p>
+        <p class="text-lg mt-2">
+          I also enjoy playing basketball, working out, and travelling! You can
+          learn more about me below:
         </p>
         <div class="flex gap-5 justify-center flex-wrap mt-5">
           {
