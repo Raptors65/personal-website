@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import arduinoLedsSong from "../images/arduino-leds-song.png";
 import beFit from "../images/be-fit.png";
+import capitalX from "../images/capitalx.png";
 import countingProject from "../images/counting-project.png";
 import courseVisualizer from "../images/course-visualizer.png";
 import debugDebacle from "../images/debug-debacle.png";
@@ -10,6 +11,7 @@ import familyOfFunctions from "../images/family-of-functions.png";
 import frcDiscordBot from "../images/frc-discord-bot.png";
 import parodyMaker from "../images/parody-maker.png";
 import personalWebsite from "../images/personal-website.png";
+import pianowise from "../images/pianowise.png";
 import pushbuttonToy from "../images/pushbutton-toy.jpg";
 import recipeDeals from "../images/recipe-deals.png";
 import resumeReviewer from "../images/resume-reviewer.png";
@@ -22,6 +24,30 @@ import trackback from "../images/trackback.png";
 import { Image } from "astro:assets";
 
 const projects = [
+  {
+    name: "capitalX",
+    description:
+      "An app that selects the best credit card for each purchase based on each card's benefits. Won Best Hack Using Expo and Best Use of LLMs at HackPrinceton.",
+    href: "https://github.com/ajagtapdev/capitalx",
+    imageSrc: capitalX,
+    imageAlt: "Home screen of showcase website for capitalX",
+    bgColor: "10, 10, 10",
+    tags: ["React Native", "Gemini", "Flask"],
+    textColor: "text-white",
+    tagColor: "bg-white",
+  },
+  {
+    name: "Pianowise",
+    description:
+      "Learn how to play the piano with nothing but a camera. Won Best AI Accessibility Hack at GenAI Genesis 2025.",
+    href: "https://github.com/Raptors65/pianowise",
+    imageSrc: pianowise,
+    imageAlt: "Home screen of Pianowise",
+    bgColor: "255, 255, 255",
+    tags: ["OpenCV", "Next.js", "Flask"],
+    textColor: "text-black",
+    tagColor: "bg-black",
+  },
   {
     name: "Debug Debacle",
     description:
