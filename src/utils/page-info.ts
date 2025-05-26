@@ -8,8 +8,8 @@ export const navigation = [
     href: "/projects/",
   },
   {
-    name: "Extracurriculars",
-    href: "/experience/extracurriculars/",
+    name: "Hobbies",
+    href: "/experience/hobbies/",
   },
 ];
 
@@ -17,7 +17,7 @@ export const colorSchemes: { [id: string]: string } = {
   "/": "bg-black text-white",
   // "/experience/": "bg-blue-200 text-black",
   "/experience/work/": "bg-blue-200 text-black",
-  "/experience/extracurriculars/": "bg-purple-200 text-black",
+  "/experience/hobbies/": "bg-purple-200 text-black",
   // "/education/": "bg-purple-200 text-black",
   "/projects/": "bg-green-200 text-black",
 };
