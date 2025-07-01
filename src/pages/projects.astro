@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import arduinoLedsSong from "../images/arduino-leds-song.png";
 import beFit from "../images/be-fit.png";
 import capitalX from "../images/capitalx.png";
+import chipChat from "../images/chipchat.png";
 import countingProject from "../images/counting-project.png";
 import courseVisualizer from "../images/course-visualizer.png";
 import debugDebacle from "../images/debug-debacle.png";
@@ -27,6 +28,18 @@ import unitalk from "../images/unitalk.png";
 import { Image } from "astro:assets";
 
 const projects = [
+  {
+    name: "ChipChat",
+    description:
+      "Generates an interactive schematic and manufacturing-ready GDSII file from just a prompt. Won the grand prize at the UC Berkeley AI Hackathon.",
+    href: "https://github.com/ajagtapdev/capitalx",
+    imageSrc: chipChat,
+    imageAlt: "Home screen of showcase website for capitalX",
+    bgColor: "14, 23, 39",
+    tags: ["React", "Gemini"],
+    textColor: "text-white",
+    tagColor: "bg-white",
+  },
   {
     name: "capitalX",
     description:
@@ -185,7 +198,7 @@ const projects = [
   {
     name: "UniTalk",
     description:
-      "A companion that gives you suggestions via Snap Spectacles for networking.",
+      "A companion that gives you realtime suggestions via Snap Spectacles for networking.",
     href: "https://github.com/elizabethf1706/LAHACKS2025",
     imageSrc: unitalk,
     imageAlt: "UniTalk website home page",
@@ -236,7 +249,7 @@ const projects = [
     href: "https://github.com/Raptors65/family-of-functions",
     imageSrc: familyOfFunctions,
     imageAlt: "First page of Magical Functions",
-    bgColor: "18, 27, 42",
+    bgColor: "78, 68, 42",
     tags: ["Web", "Math"],
     textColor: "text-white",
     tagColor: "bg-white",
@@ -250,18 +263,6 @@ const projects = [
     imageAlt: "Toronto COVID-19 API documentation",
     bgColor: "14, 17, 22",
     tags: ["Bottle", "Python"],
-    textColor: "text-white",
-    tagColor: "bg-white",
-  },
-  {
-    name: "Implications of AI",
-    description:
-      "An informational website about the implications of AI for a grade 12 computer science project.",
-    href: "https://github.com/Raptors65/society-website",
-    imageSrc: societyWebsite,
-    imageAlt: "Home page of society website",
-    bgColor: "0, 70, 184",
-    tags: ["Web"],
     textColor: "text-white",
     tagColor: "bg-white",
   },
