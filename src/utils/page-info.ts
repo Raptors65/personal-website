@@ -20,4 +20,5 @@ export const colorSchemes: { [id: string]: string } = {
   "/experience/hobbies/": "bg-purple-200 text-black",
   // "/education/": "bg-purple-200 text-black",
   "/projects/": "bg-green-200 text-black",
+  "/blog/posts/2025-08-03-mlh-fellowship-midway": "bg-black text-white",
 };

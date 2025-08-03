@@ -1,0 +1,26 @@
+---
+import Image from "astro/components/Image.astro";
+import Layout from "./Layout.astro";
+
+const { frontmatter } = Astro.props;
+
+const featuredImage = import(frontmatter.featuredImage);
+---
+
+<Layout title={frontmatter.title} description={frontmatter.description}>
+  <main class="max-w-2xl mx-auto px-4 sm:px-8 pt-5">
+    <Image src={featuredImage} alt="MLH Fellowship logo" class="w-full" />
+    <h1 class="font-mono text-2xl text-center mt-5">
+      {frontmatter.title}
+    </h1>
+    <div class="mb-3 text-center text-gray-400">{frontmatter.date}</div>
+    <div
+      class="prose prose-invert
+      prose-h1:font-bold prose-h1:text-xl
+      prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl
+      prose-headings:underline"
+    >
+      <slot />
+    </div>
+  </main>
+</Layout>
