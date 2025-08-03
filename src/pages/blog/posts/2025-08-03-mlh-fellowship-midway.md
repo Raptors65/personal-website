@@ -3,7 +3,7 @@ layout: ../../../layouts/BlogPostLayout.astro
 title: Midway through the MLH Fellowship
 description: 6 weeks into the MLH Fellowship
 date: August 3, 2025
-featuredImage: ../images/mlh-fellowship.jpg
+featuredImage: mlhFellowship
 ---
 
 Over the last six weeks, I've been an MLH Production Engineering Fellow, learning about topics like Linux, containerization, and testing, all while getting excellent mentorship from actual production engineers at Meta. I've wanted to learn more about infrastructure and systems engineering for a while now, so it has been an amazing experience learning all these topics through the valuable learning content and the various projects.
